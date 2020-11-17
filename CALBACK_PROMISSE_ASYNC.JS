@@ -44,8 +44,7 @@ async function activeNotunrMode() {
 }
 
 activeNotunrMode();
-/// todo codigo acima tem referencia de um video
-/// falando de promisse do codigo fonte
+
 
 //exemplo (calback)
 function numeroSorte(array) {
