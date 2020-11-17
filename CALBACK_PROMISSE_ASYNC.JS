@@ -1,8 +1,7 @@
-
 //criando a promisse
 function noturnMode() {
   return new Promise((resolve, reject) => {
-    const hour = 11 //new Date().getHours();
+    const hour = 11; //new Date().getHours();
 
     if (hour >= 18 || hour <= 6) {
       resolve({
@@ -31,13 +30,12 @@ function checkMode(success) {
   });
 }
 
-
-//criando uma função que chama as dua promisses criadas 
+//criando uma função que chama as dua promisses criadas
 //e rosolve elas com  Async Await
 async function activeNotunrMode() {
   try {
     const resultStatus = await noturnMode();
-    
+
     const resultMensage = await checkMode(resultStatus.status);
     console.log(resultMensage.mensage);
   } catch (error) {
@@ -45,22 +43,22 @@ async function activeNotunrMode() {
   }
 }
 
-activeNotunrMode()
-/// todo codigo acima tem referencia de um video 
+activeNotunrMode();
+/// todo codigo acima tem referencia de um video
 /// falando de promisse do codigo fonte
 
-
-
-
-
-//exemplo aula de jesiel (calback)
-
-function imprimir(calback) {
-  setTimeout(() => {
-    return calback("nome");
-  }, 3000);
+//exemplo (calback)
+function numeroSorte(array) {
+  console.log(`Os números da sorte são: ` + array);
 }
 
-//imprimir((nome) => {
-//  console.log(nome);
-//});
+function imprimir(calback) {
+  let array = new Array();
+  while (array.length < 6) {
+    let numero = Math.random() * (60 - 1) + 1;
+    array.push(numero.toFixed(0));
+  }
+  calback(array);
+}
+
+imprimir(numeroSorte);
